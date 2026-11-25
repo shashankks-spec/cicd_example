@@ -1,0 +1,19 @@
+name: CI/CD Example
+on:
+  push:
+    branches:
+      - '**'
+      
+permissions:
+  contents: read
+jobs:
+  runner-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - run: echo "Runner is working"
+      - run: python --version
+      
